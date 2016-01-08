@@ -39,6 +39,7 @@
 -(void)getWeatherWithCityStr:(NSString *)cityStr
 {
     
+    
     NSString *urlStr = @"http://apistore.baidu.com/microservice/weather";
     //   param
     NSMutableDictionary *param = [NSMutableDictionary dictionary];

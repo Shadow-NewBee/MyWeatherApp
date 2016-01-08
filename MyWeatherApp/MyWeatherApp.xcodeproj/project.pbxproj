@@ -129,6 +129,7 @@
 		B67142F31C3F57FC0079CEF8 /* MyWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				B67143311C3F58C60079CEF8 /* View */,
 				B67143621C3F59110079CEF8 /* Other */,
 				B67143271C3F58C60079CEF8 /* Controller */,
 				B671432A1C3F58C60079CEF8 /* Model */,
@@ -184,7 +185,6 @@
 				B671432E1C3F58C60079CEF8 /* LSTransWordToPinyin.m */,
 				B671432F1C3F58C60079CEF8 /* LSWeather.h */,
 				B67143301C3F58C60079CEF8 /* LSWeather.m */,
-				B67143311C3F58C60079CEF8 /* View */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,7 +194,8 @@
 			children = (
 				B67142FD1C3F57FC0079CEF8 /* Main.storyboard */,
 			);
-			path = View;
+			name = View;
+			path = Model/View;
 			sourceTree = "<group>";
 		};
 		B67143621C3F59110079CEF8 /* Other */ = {
