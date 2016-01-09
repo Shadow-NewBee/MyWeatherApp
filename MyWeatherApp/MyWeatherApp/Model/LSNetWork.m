@@ -13,7 +13,7 @@
 +(void)getDataWithParam:(NSDictionary *)param URL:(NSString *)url success:(void (^)(id))success fail:(void (^)(NSError *))fail
 {
     AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
-    session.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    session.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript", nil];
     [session GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             success(responseObject);

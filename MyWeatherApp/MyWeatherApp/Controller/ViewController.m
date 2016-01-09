@@ -4,27 +4,33 @@
 //
 //  Created by xiaoT on 15/12/26.
 //  Copyright © 2015年 赖三聘. All rights reserved.
-//http://apistore.baidu.com/astore/serviceinfo/1798.html
+//http://op.juhe.cn/onebox/weather/query
 
+#import <CoreLocation/CoreLocation.h>
 #import "ViewController.h"
 #import "AFNetworking.h"
 #import "LSWeather.h"
 #import "LSNetWork.h"
-#import "LSTransWordToPinyin.h"
-#import <CoreLocation/CoreLocation.h>
-@interface ViewController ()<CLLocationManagerDelegate>
+#import "LSFutureWeather.h"
+#import "LSDaysWeatherCell.h"
+
+@interface ViewController ()<CLLocationManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) LSWeather *weather;
 
 @property (weak, nonatomic) IBOutlet UITextField *cityTextField;
 @property (weak, nonatomic) IBOutlet UILabel *tempLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weatherLabel;
+@property (nonatomic, strong) LSFutureWeather *futureWeather;
+
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+@property (strong, nonatomic) IBOutlet UICollectionView *myColletionView;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
 - (IBAction)searchWeather:(id)sender;
-- (IBAction)locationClicked:(id)sender;
+- (IBAction)locationClicked;
 
 @end
 
@@ -34,65 +40,57 @@
     [super viewDidLoad];
     
     self.cityTextField.keyboardType = UIKeyboardTypeDefault;
+//    设置collectionView
+    self.myColletionView.delegate = self;
+    self.myColletionView.dataSource = self;
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    self.myColletionView.collectionViewLayout = flowLayout;
+    UINib *nib = [UINib nibWithNibName:@"LSDaysWeatherCell" bundle:[NSBundle mainBundle]];
+
+    [self.myColletionView registerNib:nib forCellWithReuseIdentifier:@"weatherCell"];
+    [self.myColletionView reloadData];
+    
 }
 
--(void)getWeatherWithCityStr:(NSString *)cityStr
+
+
+#pragma mark----CollectionViewDelegate &dataSource
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    
-    
-    NSString *urlStr = @"http://apistore.baidu.com/microservice/weather";
-    //   param
-    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    param[@"citypinyin"] = cityStr;
-    
-    [LSNetWork getDataWithParam:param URL:urlStr success:^(id responseDic) {
-        NSDictionary *valueDic = responseDic[@"retData"];
-        if ([valueDic count] != 0) {
-            LSWeather *weather = [LSWeather weatherWithDic:valueDic];
-            self.tempLabel.text = [NSString stringWithFormat:@"%@ ℃",weather.temp];
-            self.cityLabel.text = weather.city;
-            self.dateLabel.text = weather.date;
-            self.weatherLabel.text = weather.weather;
-        } else {
-            NSString *alertTitle = @"Incorrect City Name";
-            NSString *alertMessage = @"Please check the city name.";
-            
-            [self recieveAlertAlertTitle:alertTitle alertMessage:alertMessage];
-        }
-        
-    } fail:^(NSError *error) {
-        NSString *errorStr = [NSString stringWithFormat:@"%@",error];
-        [self recieveAlertAlertTitle:@"Net Error" alertMessage:errorStr];
-    }];
+    return 7;
 }
 
--(void)recieveAlertAlertTitle:(NSString *)alertTitle alertMessage:(NSString *)alertMessage
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:alertTitle message:alertMessage preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
-    [alertVc addAction:cancelAction];
-    [alertVc addAction:okAction];
-    
-    [self presentViewController:alertVc animated:YES completion:nil];
+    return 1;
 }
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *reusedId = @"weatherCell";
+    LSDaysWeatherCell *cell = (LSDaysWeatherCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reusedId forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor orangeColor];
+    cell.weatherLabel.text = @"ddd";
+    cell.weekLabel.text = @"test";
+
+    
+    
+    return cell;
+}
+
+
 
 - (IBAction)searchWeather:(id)sender {
-    __block NSString *cityStr = self.cityTextField.text;
+    NSString *cityStr = self.cityTextField.text;
 
-    if ([cityStr length]) {
-        
-        [LSTransWordToPinyin transToPinyinWithString:cityStr returnThePinyin:^(NSString *pinyin) {
-            cityStr = pinyin;
-        }];
-
-    }
     [self getWeatherWithCityStr:cityStr];
     [self.cityTextField resignFirstResponder];
     
 }
 
-- (IBAction)locationClicked:(id)sender {
+- (IBAction)locationClicked {
     
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
@@ -100,7 +98,8 @@
     
     if ([CLLocationManager locationServicesEnabled]) {
         NSLog(@"开始定位");
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+//        设置定位精度
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         self.locationManager.distanceFilter = 100;
         
         [self.locationManager startUpdatingLocation];
@@ -118,27 +117,10 @@
     
     [geocoder reverseGeocodeLocation:self.locationManager.location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         if (placemarks.count > 0) {
+//            获取定位城市名称
             CLPlacemark *placeMark = [placemarks objectAtIndexedSubscript:0];
-            //               通过反向编码获取当前定位城市名称
-            __block NSString *cityStr = placeMark.locality;
-            //               取特定字符前的字符串
-            if ([cityStr rangeOfString:@"市"].location != NSNotFound) {
-                NSRange range = [cityStr rangeOfString:@"市"];
-                __block  NSString *str = [cityStr substringToIndex:range.location];
- //                根据获取的城市名进行天气搜索
-                [LSTransWordToPinyin transToPinyinWithString:str returnThePinyin:^(NSString *pinyin) {
-                    str = pinyin;
-                }];
-                [self getWeatherWithCityStr:str];
-            } else {
-                if ([cityStr length]) {
-                    [LSTransWordToPinyin transToPinyinWithString:cityStr returnThePinyin:^(NSString *pinyin) {
-                        cityStr = pinyin;
-                    }];
-                    [self getWeatherWithCityStr:cityStr];
-                }
-            }
-            
+            NSString *cityStr = placeMark.locality;
+            [self getWeatherWithCityStr:cityStr];
         }
     }];
 }
@@ -152,5 +134,44 @@
 {
     [_locationManager stopUpdatingLocation];
 }
+-(void)recieveAlertAlertTitle:(NSString *)alertTitle alertMessage:(NSString *)alertMessage
+{
+    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:alertTitle message:alertMessage preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [alertVc addAction:cancelAction];
+    [alertVc addAction:okAction];
+    
+    [self presentViewController:alertVc animated:YES completion:nil];
+}
+
+-(void)getWeatherWithCityStr:(NSString *)cityStr
+{
+    NSString *urlStr = @"http://op.juhe.cn/onebox/weather/query";
+    //   param
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"cityname"] = cityStr;
+    param[@"key"] = @"74a29f7f1c249e5926f52311458f5d78";
+    
+    [LSNetWork getDataWithParam:param URL:urlStr success:^(id responseDic) {
+        NSDictionary *valueDic = responseDic[@"result"];
+        NSDictionary *dataDic = valueDic[@"data"];
+        //      今天的天气信息dic,并设置今天的天气信息
+        NSDictionary *todayWeatherDic = dataDic[@"realtime"];
+        LSWeather *todayWeather = [LSWeather weatherWithDic:todayWeatherDic];
+        self.cityLabel.text = todayWeather.city;
+        self.tempLabel.text = [NSString stringWithFormat:@"%@°",todayWeather.temp];
+        self.weatherLabel.text = todayWeather.weather;
+        
+        //       未来几天天气
+        LSFutureWeather *futureWeather = [LSFutureWeather futherWeatherWithDic:dataDic];
+        //      作为后面的collectionView做数据源
+        self.futureWeather =futureWeather;        
+    } fail:^(NSError *error) {
+        NSString *errorStr = [NSString stringWithFormat:@"%@",error];
+        [self recieveAlertAlertTitle:@"Net Error" alertMessage:errorStr];
+    }];
+}
+
 
 @end

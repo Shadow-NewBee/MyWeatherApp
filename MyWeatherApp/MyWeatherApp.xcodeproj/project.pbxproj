@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B65477A31C3FA81400BAB66A /* LSFutureWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = B65477A21C3FA81400BAB66A /* LSFutureWeather.m */; settings = {ASSET_TAGS = (); }; };
+		B65477A61C3FED7600BAB66A /* LSDaysWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B65477A51C3FED7600BAB66A /* LSDaysWeatherCell.m */; settings = {ASSET_TAGS = (); }; };
 		B67142F61C3F57FC0079CEF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B67142F51C3F57FC0079CEF8 /* main.m */; };
 		B67143011C3F57FC0079CEF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67143001C3F57FC0079CEF8 /* Assets.xcassets */; };
 		B67143041C3F57FC0079CEF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67143021C3F57FC0079CEF8 /* LaunchScreen.storyboard */; };
@@ -25,6 +27,7 @@
 		B671437A1C3F59110079CEF8 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B67143731C3F59110079CEF8 /* AFURLSessionManager.m */; settings = {ASSET_TAGS = (); }; };
 		B67E5BC61C3F5F1A002E20A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67E5BC41C3F5F1A002E20A2 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		B67E5BC71C3F5F1A002E20A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67E5BC51C3F5F1A002E20A2 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		B69AC6781C40BA3100CAA3AA /* LSDaysWeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69AC6771C40BA3100CAA3AA /* LSDaysWeatherCell.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B65477A11C3FA81400BAB66A /* LSFutureWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSFutureWeather.h; sourceTree = "<group>"; };
+		B65477A21C3FA81400BAB66A /* LSFutureWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSFutureWeather.m; sourceTree = "<group>"; };
+		B65477A41C3FED7600BAB66A /* LSDaysWeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSDaysWeatherCell.h; sourceTree = "<group>"; };
+		B65477A51C3FED7600BAB66A /* LSDaysWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSDaysWeatherCell.m; sourceTree = "<group>"; };
 		B67142F11C3F57FC0079CEF8 /* MyWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67142F51C3F57FC0079CEF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B67143001C3F57FC0079CEF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +88,7 @@
 		B67143731C3F59110079CEF8 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		B67E5BC41C3F5F1A002E20A2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B67E5BC51C3F5F1A002E20A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B69AC6771C40BA3100CAA3AA /* LSDaysWeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSDaysWeatherCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +139,8 @@
 		B67142F31C3F57FC0079CEF8 /* MyWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				B67E5BC31C3F5F1A002E20A2 /* View */,
 				B67143621C3F59110079CEF8 /* Other */,
+				B67E5BC31C3F5F1A002E20A2 /* View */,
 				B67143271C3F58C60079CEF8 /* Controller */,
 				B671432A1C3F58C60079CEF8 /* Model */,
 				B67143001C3F57FC0079CEF8 /* Assets.xcassets */,
@@ -187,6 +195,8 @@
 				B671432E1C3F58C60079CEF8 /* LSTransWordToPinyin.m */,
 				B671432F1C3F58C60079CEF8 /* LSWeather.h */,
 				B67143301C3F58C60079CEF8 /* LSWeather.m */,
+				B65477A11C3FA81400BAB66A /* LSFutureWeather.h */,
+				B65477A21C3FA81400BAB66A /* LSFutureWeather.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +244,9 @@
 			children = (
 				B67E5BC41C3F5F1A002E20A2 /* LaunchScreen.storyboard */,
 				B67E5BC51C3F5F1A002E20A2 /* Main.storyboard */,
+				B65477A41C3FED7600BAB66A /* LSDaysWeatherCell.h */,
+				B65477A51C3FED7600BAB66A /* LSDaysWeatherCell.m */,
+				B69AC6771C40BA3100CAA3AA /* LSDaysWeatherCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,6 +361,7 @@
 				B67143041C3F57FC0079CEF8 /* LaunchScreen.storyboard in Resources */,
 				B67143011C3F57FC0079CEF8 /* Assets.xcassets in Resources */,
 				B67E5BC71C3F5F1A002E20A2 /* Main.storyboard in Resources */,
+				B69AC6781C40BA3100CAA3AA /* LSDaysWeatherCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +390,7 @@
 				B67143771C3F59110079CEF8 /* AFSecurityPolicy.m in Sources */,
 				B671434C1C3F58C60079CEF8 /* LSWeather.m in Sources */,
 				B67143741C3F59110079CEF8 /* AppDelegate.m in Sources */,
+				B65477A61C3FED7600BAB66A /* LSDaysWeatherCell.m in Sources */,
 				B67143791C3F59110079CEF8 /* AFURLResponseSerialization.m in Sources */,
 				B671434B1C3F58C60079CEF8 /* LSTransWordToPinyin.m in Sources */,
 				B67142F61C3F57FC0079CEF8 /* main.m in Sources */,
@@ -383,6 +398,7 @@
 				B67143781C3F59110079CEF8 /* AFURLRequestSerialization.m in Sources */,
 				B671437A1C3F59110079CEF8 /* AFURLSessionManager.m in Sources */,
 				B67143761C3F59110079CEF8 /* AFNetworkReachabilityManager.m in Sources */,
+				B65477A31C3FA81400BAB66A /* LSFutureWeather.m in Sources */,
 				B671434A1C3F58C60079CEF8 /* LSNetWork.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

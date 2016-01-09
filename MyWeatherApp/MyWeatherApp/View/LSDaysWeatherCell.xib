@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="weatherCell" id="iN0-l3-epB" customClass="LSDaysWeatherCell">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="65"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bd-Vc-bcy">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="16"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3s-Ae-7x5">
+                    <rect key="frame" x="0.0" y="43" width="100" height="22"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KY-81-1Lz">
+                    <rect key="frame" x="0.0" y="18" width="100" height="23"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="2KY-81-1Lz" firstAttribute="top" secondItem="3bd-Vc-bcy" secondAttribute="bottom" constant="2" id="60q-mm-ncY"/>
+                <constraint firstAttribute="trailing" secondItem="3bd-Vc-bcy" secondAttribute="trailing" id="8UA-0Q-F0T"/>
+                <constraint firstAttribute="trailing" secondItem="2KY-81-1Lz" secondAttribute="trailing" id="Kps-WX-UeG"/>
+                <constraint firstItem="3bd-Vc-bcy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Les-Qx-20l"/>
+                <constraint firstAttribute="trailing" secondItem="j3s-Ae-7x5" secondAttribute="trailing" id="X5y-rQ-cSt"/>
+                <constraint firstItem="2KY-81-1Lz" firstAttribute="top" secondItem="3bd-Vc-bcy" secondAttribute="bottom" constant="2" id="YUL-CT-2WW"/>
+                <constraint firstItem="j3s-Ae-7x5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="a8P-DL-rXY"/>
+                <constraint firstItem="j3s-Ae-7x5" firstAttribute="top" secondItem="2KY-81-1Lz" secondAttribute="bottom" constant="2" id="hA8-eZ-TXb"/>
+                <constraint firstItem="2KY-81-1Lz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oSB-0T-oVK"/>
+                <constraint firstAttribute="bottom" secondItem="j3s-Ae-7x5" secondAttribute="bottom" id="pfq-xV-g1C"/>
+                <constraint firstItem="3bd-Vc-bcy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qPs-iz-hO1"/>
+                <constraint firstItem="j3s-Ae-7x5" firstAttribute="top" secondItem="2KY-81-1Lz" secondAttribute="bottom" constant="2" id="u11-fm-PwP"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tempLabel" destination="j3s-Ae-7x5" id="7ga-TD-tZy"/>
+                <outlet property="weatherLabel" destination="2KY-81-1Lz" id="E4N-Z7-gQa"/>
+                <outlet property="weekLabel" destination="3bd-Vc-bcy" id="wgb-yQ-jMQ"/>
+            </connections>
+            <point key="canvasLocation" x="101" y="231.5"/>
+        </view>
+    </objects>
+</document>
