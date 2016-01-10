@@ -21,9 +21,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *tempLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weatherLabel;
+@property (weak, nonatomic) IBOutlet UILabel *windDirectLabel;
+@property (weak, nonatomic) IBOutlet UILabel *windPowerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *windSpeedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pm25Label;
+@property (weak, nonatomic) IBOutlet UILabel *qualityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *desLabel;
+
 @property (nonatomic, strong) LSFutureWeather *futureWeather;
 
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
 
 @property (strong, nonatomic) IBOutlet UICollectionView *myColletionView;
 
@@ -78,8 +85,8 @@
     
     LSFutureWeather *futureWeather = self.futureWeather.dayWeather[indexPath.row];
     cell.weatherLabel.text = [self.futureWeather.dayWeather[indexPath.row] weather];
-    cell.weekLabel.text = futureWeather.week;
-    cell.tempLabel.text = futureWeather.temperature;
+    cell.weekLabel.text = [NSString stringWithFormat:@"星期%@",futureWeather.week];
+    cell.tempLabel.text = [NSString stringWithFormat:@"%@°",futureWeather.temperature];
     
     
     return cell;
@@ -164,18 +171,23 @@
         NSDictionary *valueDic = responseDic[@"result"];
         NSDictionary *dataDic = valueDic[@"data"];
         //      今天的天气信息dic,并设置今天的天气信息
-        NSDictionary *todayWeatherDic = dataDic[@"realtime"];
-        LSWeather *todayWeather = [LSWeather weatherWithDic:todayWeatherDic];
+        LSWeather *todayWeather = [LSWeather weatherWithDic:dataDic];
         
         self.cityLabel.text = todayWeather.city;
         self.tempLabel.text = [NSString stringWithFormat:@"%@°",todayWeather.temp];
         self.weatherLabel.text = todayWeather.weather;
-
-        //       未来几天天气
+        self.windDirectLabel.text = [NSString stringWithFormat:@"风向 : %@",todayWeather.windDirect];
+        self.windPowerLabel.text = [NSString stringWithFormat:@"级数 : %@",todayWeather.windPower];
+        self.windSpeedLabel.text = [NSString stringWithFormat:@"风速 : %@m/min",todayWeather.windSpeed];
+//        PM2.5
+        self.pm25Label.text = [NSString stringWithFormat:@"PM2.5 : %@",todayWeather.pm25];
+        self.qualityLabel.text = [NSString stringWithFormat:@"Quality : %@",todayWeather.quality];
+        self.desLabel.text = [NSString stringWithFormat:@"%@",todayWeather.des];
+        //      未来几天天气
         LSFutureWeather *futureWeather = [LSFutureWeather futherWeatherWithDic:dataDic];
-        //      作为后面的collectionView做数据源
+
         self.futureWeather = futureWeather;
-//        NSLog(@"futureWeather.week---%@",futureWeather.week);
+
         [self.myColletionView reloadData];
     } fail:^(NSError *error) {
         NSString *errorStr = [NSString stringWithFormat:@"%@",error];

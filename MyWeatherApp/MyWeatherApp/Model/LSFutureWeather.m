@@ -25,9 +25,6 @@
         insideWeather.week = dic[@"week"];
         [temArray addObject:insideWeather];
     }
-    for (LSFutureWeather *future in temArray) {
-        NSLog(@"future.week---%@",future.week);
-    }
     futureWeather.dayWeather = temArray;
     
     return futureWeather;

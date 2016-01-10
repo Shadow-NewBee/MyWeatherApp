@@ -32,12 +32,25 @@
 {
     LSWeather *weather = [[LSWeather alloc] init];
 //  cityName
-    weather.city = dic[@"city_name"];
+    NSDictionary *todayWeatherDic = dic[@"realtime"];
+    weather.city = todayWeatherDic[@"city_name"];
 //    info & temp
-    NSDictionary *weatherDic = dic[@"weather"];
+    NSDictionary *weatherDic = todayWeatherDic[@"weather"];
     weather.temp = weatherDic[@"temperature"];
     weather.weather = weatherDic[@"info"];
-
+//    windInfo
+    NSDictionary *windDic = todayWeatherDic[@"wind"];
+    weather.windDirect = windDic[@"direct"];
+    weather.windPower = windDic[@"power"];
+    weather.windSpeed = windDic[@"windspeed"];
+//    pm2.5 Info
+    NSDictionary *pmDic = dic[@"pm25"];
+    NSDictionary *detailPmDic = pmDic[@"pm25"];
+    weather.pm25 = detailPmDic[@"pm25"];
+    weather.quality = detailPmDic[@"quality"];
+    weather.des = detailPmDic[@"des"];
+    
+    
     return weather;
 }
 @end
