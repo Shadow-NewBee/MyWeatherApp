@@ -49,17 +49,20 @@
     UINib *nib = [UINib nibWithNibName:@"LSDaysWeatherCell" bundle:[NSBundle mainBundle]];
 
     [self.myColletionView registerNib:nib forCellWithReuseIdentifier:@"weatherCell"];
-    [self.myColletionView reloadData];
     
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self locationClicked];
+}
 
 
 #pragma mark----CollectionViewDelegate &dataSource
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 7;
+    return self.futureWeather.dayWeather.count;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -72,9 +75,11 @@
     static NSString *reusedId = @"weatherCell";
     LSDaysWeatherCell *cell = (LSDaysWeatherCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reusedId forIndexPath:indexPath];
     cell.backgroundColor = [UIColor orangeColor];
-    cell.weatherLabel.text = @"ddd";
-    cell.weekLabel.text = @"test";
-
+    
+    LSFutureWeather *futureWeather = self.futureWeather.dayWeather[indexPath.row];
+    cell.weatherLabel.text = [self.futureWeather.dayWeather[indexPath.row] weather];
+    cell.weekLabel.text = futureWeather.week;
+    cell.tempLabel.text = futureWeather.temperature;
     
     
     return cell;
@@ -153,24 +158,30 @@
     param[@"cityname"] = cityStr;
     param[@"key"] = @"74a29f7f1c249e5926f52311458f5d78";
     
+  
+    
     [LSNetWork getDataWithParam:param URL:urlStr success:^(id responseDic) {
         NSDictionary *valueDic = responseDic[@"result"];
         NSDictionary *dataDic = valueDic[@"data"];
         //      今天的天气信息dic,并设置今天的天气信息
         NSDictionary *todayWeatherDic = dataDic[@"realtime"];
         LSWeather *todayWeather = [LSWeather weatherWithDic:todayWeatherDic];
+        
         self.cityLabel.text = todayWeather.city;
         self.tempLabel.text = [NSString stringWithFormat:@"%@°",todayWeather.temp];
         self.weatherLabel.text = todayWeather.weather;
-        
+
         //       未来几天天气
         LSFutureWeather *futureWeather = [LSFutureWeather futherWeatherWithDic:dataDic];
         //      作为后面的collectionView做数据源
-        self.futureWeather =futureWeather;        
+        self.futureWeather = futureWeather;
+//        NSLog(@"futureWeather.week---%@",futureWeather.week);
+        [self.myColletionView reloadData];
     } fail:^(NSError *error) {
         NSString *errorStr = [NSString stringWithFormat:@"%@",error];
         [self recieveAlertAlertTitle:@"Net Error" alertMessage:errorStr];
     }];
+
 }
 
 

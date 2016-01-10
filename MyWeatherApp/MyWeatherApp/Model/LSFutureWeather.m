@@ -19,12 +19,14 @@
     for (NSDictionary *dic in weatherArray) {
         NSDictionary *detailDayDic = dic[@"info"];
         NSArray *dayW = detailDayDic[@"day"];
-        futureWeather.weather = dayW[1];
-        futureWeather.temperature = dayW[2];
-        
-        futureWeather.week = dic[@"week"];
-        NSLog(@"week----%@",futureWeather.week);
-        [temArray addObject:futureWeather];
+        LSFutureWeather *insideWeather = [[LSFutureWeather alloc]init];
+        insideWeather.weather = dayW[1];
+        insideWeather.temperature = dayW[2];
+        insideWeather.week = dic[@"week"];
+        [temArray addObject:insideWeather];
+    }
+    for (LSFutureWeather *future in temArray) {
+        NSLog(@"future.week---%@",future.week);
     }
     futureWeather.dayWeather = temArray;
     
