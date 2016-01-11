@@ -29,13 +29,6 @@
 		B67E5BC71C3F5F1A002E20A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67E5BC51C3F5F1A002E20A2 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		B69AC6781C40BA3100CAA3AA /* LSDaysWeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69AC6771C40BA3100CAA3AA /* LSDaysWeatherCell.xib */; settings = {ASSET_TAGS = (); }; };
 		B6B0E24A1C43E75200684C07 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B0E2491C43E75200684C07 /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
-		B6B0E2541C43F4EF00684C07 /* 多云.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6B0E24D1C43F4EF00684C07 /* 多云.jpg */; settings = {ASSET_TAGS = (); }; };
-		B6B0E2551C43F4EF00684C07 /* 小雨.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B6B0E24E1C43F4EF00684C07 /* 小雨.jpeg */; settings = {ASSET_TAGS = (); }; };
-		B6B0E2561C43F4EF00684C07 /* 晴.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6B0E24F1C43F4EF00684C07 /* 晴.jpg */; settings = {ASSET_TAGS = (); }; };
-		B6B0E2571C43F4EF00684C07 /* 阴.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6B0E2501C43F4EF00684C07 /* 阴.jpg */; settings = {ASSET_TAGS = (); }; };
-		B6B0E2581C43F4EF00684C07 /* 阵雨.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6B0E2511C43F4EF00684C07 /* 阵雨.jpg */; settings = {ASSET_TAGS = (); }; };
-		B6B0E2591C43F4EF00684C07 /* 雨夹雪.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6B0E2521C43F4EF00684C07 /* 雨夹雪.jpg */; settings = {ASSET_TAGS = (); }; };
-		B6B0E25A1C43F4EF00684C07 /* 雪.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6B0E2531C43F4EF00684C07 /* 雪.jpg */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,13 +92,6 @@
 		B69AC6771C40BA3100CAA3AA /* LSDaysWeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSDaysWeatherCell.xib; sourceTree = "<group>"; };
 		B6B0E2481C43E75200684C07 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		B6B0E2491C43E75200684C07 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		B6B0E24D1C43F4EF00684C07 /* 多云.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "多云.jpg"; sourceTree = "<group>"; };
-		B6B0E24E1C43F4EF00684C07 /* 小雨.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "小雨.jpeg"; sourceTree = "<group>"; };
-		B6B0E24F1C43F4EF00684C07 /* 晴.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "晴.jpg"; sourceTree = "<group>"; };
-		B6B0E2501C43F4EF00684C07 /* 阴.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "阴.jpg"; sourceTree = "<group>"; };
-		B6B0E2511C43F4EF00684C07 /* 阵雨.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "阵雨.jpg"; sourceTree = "<group>"; };
-		B6B0E2521C43F4EF00684C07 /* 雨夹雪.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "雨夹雪.jpg"; sourceTree = "<group>"; };
-		B6B0E2531C43F4EF00684C07 /* 雪.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "雪.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,7 +207,6 @@
 		B67143621C3F59110079CEF8 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				B6B0E24C1C43F4EF00684C07 /* imagePackage */,
 				B67143631C3F59110079CEF8 /* AppDelegate.h */,
 				B67143641C3F59110079CEF8 /* AppDelegate.m */,
 				B67143651C3F59110079CEF8 /* Lib */,
@@ -277,20 +262,6 @@
 				B6B0E2491C43E75200684C07 /* MBProgressHUD.m */,
 			);
 			name = MBProgress;
-			sourceTree = "<group>";
-		};
-		B6B0E24C1C43F4EF00684C07 /* imagePackage */ = {
-			isa = PBXGroup;
-			children = (
-				B6B0E24D1C43F4EF00684C07 /* 多云.jpg */,
-				B6B0E24E1C43F4EF00684C07 /* 小雨.jpeg */,
-				B6B0E24F1C43F4EF00684C07 /* 晴.jpg */,
-				B6B0E2501C43F4EF00684C07 /* 阴.jpg */,
-				B6B0E2511C43F4EF00684C07 /* 阵雨.jpg */,
-				B6B0E2521C43F4EF00684C07 /* 雨夹雪.jpg */,
-				B6B0E2531C43F4EF00684C07 /* 雪.jpg */,
-			);
-			path = imagePackage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,18 +370,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6B0E2581C43F4EF00684C07 /* 阵雨.jpg in Resources */,
-				B6B0E2561C43F4EF00684C07 /* 晴.jpg in Resources */,
-				B6B0E2541C43F4EF00684C07 /* 多云.jpg in Resources */,
 				B67E5BC61C3F5F1A002E20A2 /* LaunchScreen.storyboard in Resources */,
-				B6B0E2571C43F4EF00684C07 /* 阴.jpg in Resources */,
 				B67143041C3F57FC0079CEF8 /* LaunchScreen.storyboard in Resources */,
-				B6B0E25A1C43F4EF00684C07 /* 雪.jpg in Resources */,
 				B67143011C3F57FC0079CEF8 /* Assets.xcassets in Resources */,
 				B67E5BC71C3F5F1A002E20A2 /* Main.storyboard in Resources */,
 				B69AC6781C40BA3100CAA3AA /* LSDaysWeatherCell.xib in Resources */,
-				B6B0E2591C43F4EF00684C07 /* 雨夹雪.jpg in Resources */,
-				B6B0E2551C43F4EF00684C07 /* 小雨.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
