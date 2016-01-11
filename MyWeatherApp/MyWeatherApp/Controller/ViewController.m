@@ -147,7 +147,7 @@
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    NSLog(@"定位失败");
+    [self recieveAlertAlertTitle:@"Location Fail" alertMessage:@"Can not locate"];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
