@@ -104,7 +104,6 @@
     if (cityStr.length) {
         [self getWeatherWithCityStr:cityStr];
         [self.cityTextField resignFirstResponder];
-
     } else {
         [self recieveAlertAlertTitle:@"No City Name" alertMessage:@"Please type in city name!"];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
