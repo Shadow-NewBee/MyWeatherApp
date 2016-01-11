@@ -28,6 +28,7 @@
 		B67E5BC61C3F5F1A002E20A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67E5BC41C3F5F1A002E20A2 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		B67E5BC71C3F5F1A002E20A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67E5BC51C3F5F1A002E20A2 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		B69AC6781C40BA3100CAA3AA /* LSDaysWeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B69AC6771C40BA3100CAA3AA /* LSDaysWeatherCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B6B0E24A1C43E75200684C07 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B0E2491C43E75200684C07 /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		B67E5BC41C3F5F1A002E20A2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B67E5BC51C3F5F1A002E20A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B69AC6771C40BA3100CAA3AA /* LSDaysWeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSDaysWeatherCell.xib; sourceTree = "<group>"; };
+		B6B0E2481C43E75200684C07 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		B6B0E2491C43E75200684C07 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +217,7 @@
 		B67143651C3F59110079CEF8 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				B6B0E24B1C43E7E600684C07 /* MBProgress */,
 				B67143661C3F59110079CEF8 /* AFNetworking */,
 			);
 			path = Lib;
@@ -249,6 +253,15 @@
 				B69AC6771C40BA3100CAA3AA /* LSDaysWeatherCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B6B0E24B1C43E7E600684C07 /* MBProgress */ = {
+			isa = PBXGroup;
+			children = (
+				B6B0E2481C43E75200684C07 /* MBProgressHUD.h */,
+				B6B0E2491C43E75200684C07 /* MBProgressHUD.m */,
+			);
+			name = MBProgress;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +406,7 @@
 				B65477A61C3FED7600BAB66A /* LSDaysWeatherCell.m in Sources */,
 				B67143791C3F59110079CEF8 /* AFURLResponseSerialization.m in Sources */,
 				B671434B1C3F58C60079CEF8 /* LSTransWordToPinyin.m in Sources */,
+				B6B0E24A1C43E75200684C07 /* MBProgressHUD.m in Sources */,
 				B67142F61C3F57FC0079CEF8 /* main.m in Sources */,
 				B67143751C3F59110079CEF8 /* AFHTTPSessionManager.m in Sources */,
 				B67143781C3F59110079CEF8 /* AFURLRequestSerialization.m in Sources */,
@@ -530,6 +544,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MyWeatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-111402083.MyWeatherApp";
@@ -541,6 +556,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MyWeatherApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-111402083.MyWeatherApp";

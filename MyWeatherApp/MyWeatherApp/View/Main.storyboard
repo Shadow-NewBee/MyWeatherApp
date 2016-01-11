@@ -18,25 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pFN-PX-toV">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="GIR-gz-H5H"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="GIR-gz-H5H"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="GIR-gz-H5H"/>
-                                    </mask>
-                                </variation>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUo-qb-edL">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
@@ -318,23 +299,6 @@
                                             </mask>
                                             <mask key="constraints">
                                                 <exclude reference="p3w-3f-zqZ"/>
-                                                <exclude reference="Hy9-ts-gcZ"/>
-                                                <exclude reference="hhU-Hs-CkP"/>
-                                                <exclude reference="xYj-dE-zIZ"/>
-                                                <exclude reference="8tV-2L-iie"/>
-                                                <exclude reference="QcB-b8-VnX"/>
-                                                <exclude reference="lyx-dP-eD6"/>
-                                                <exclude reference="26R-nY-xOn"/>
-                                                <exclude reference="IVs-87-Mxp"/>
-                                                <exclude reference="xD9-0X-WA8"/>
-                                                <exclude reference="zal-y9-NPp"/>
-                                                <exclude reference="Pyj-3G-lCO"/>
-                                                <exclude reference="VMu-Yo-0Nw"/>
-                                                <exclude reference="aeO-7V-naL"/>
-                                                <exclude reference="ee1-qh-EnZ"/>
-                                                <exclude reference="NB2-1S-2Ei"/>
-                                                <exclude reference="XiZ-qd-Tcs"/>
-                                                <exclude reference="ujE-Pw-hRo"/>
                                                 <exclude reference="NJ4-Tc-0k5"/>
                                                 <exclude reference="jri-pV-NnT"/>
                                                 <exclude reference="wRM-aP-Fbo"/>
@@ -343,6 +307,23 @@
                                                 <exclude reference="JGa-gH-Quo"/>
                                                 <exclude reference="Mlw-qP-gKb"/>
                                                 <exclude reference="bfz-wf-fda"/>
+                                                <exclude reference="8tV-2L-iie"/>
+                                                <exclude reference="QcB-b8-VnX"/>
+                                                <exclude reference="lyx-dP-eD6"/>
+                                                <exclude reference="NB2-1S-2Ei"/>
+                                                <exclude reference="XiZ-qd-Tcs"/>
+                                                <exclude reference="ujE-Pw-hRo"/>
+                                                <exclude reference="Pyj-3G-lCO"/>
+                                                <exclude reference="VMu-Yo-0Nw"/>
+                                                <exclude reference="aeO-7V-naL"/>
+                                                <exclude reference="ee1-qh-EnZ"/>
+                                                <exclude reference="26R-nY-xOn"/>
+                                                <exclude reference="IVs-87-Mxp"/>
+                                                <exclude reference="xD9-0X-WA8"/>
+                                                <exclude reference="zal-y9-NPp"/>
+                                                <exclude reference="Hy9-ts-gcZ"/>
+                                                <exclude reference="hhU-Hs-CkP"/>
+                                                <exclude reference="xYj-dE-zIZ"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
@@ -357,23 +338,6 @@
                                             </mask>
                                             <mask key="constraints">
                                                 <include reference="p3w-3f-zqZ"/>
-                                                <include reference="Hy9-ts-gcZ"/>
-                                                <include reference="hhU-Hs-CkP"/>
-                                                <include reference="xYj-dE-zIZ"/>
-                                                <include reference="8tV-2L-iie"/>
-                                                <include reference="QcB-b8-VnX"/>
-                                                <include reference="lyx-dP-eD6"/>
-                                                <include reference="26R-nY-xOn"/>
-                                                <include reference="IVs-87-Mxp"/>
-                                                <include reference="xD9-0X-WA8"/>
-                                                <include reference="zal-y9-NPp"/>
-                                                <include reference="Pyj-3G-lCO"/>
-                                                <include reference="VMu-Yo-0Nw"/>
-                                                <include reference="aeO-7V-naL"/>
-                                                <include reference="ee1-qh-EnZ"/>
-                                                <include reference="NB2-1S-2Ei"/>
-                                                <include reference="XiZ-qd-Tcs"/>
-                                                <include reference="ujE-Pw-hRo"/>
                                                 <include reference="NJ4-Tc-0k5"/>
                                                 <include reference="jri-pV-NnT"/>
                                                 <include reference="wRM-aP-Fbo"/>
@@ -382,6 +346,23 @@
                                                 <include reference="JGa-gH-Quo"/>
                                                 <include reference="Mlw-qP-gKb"/>
                                                 <include reference="bfz-wf-fda"/>
+                                                <include reference="8tV-2L-iie"/>
+                                                <include reference="QcB-b8-VnX"/>
+                                                <include reference="lyx-dP-eD6"/>
+                                                <include reference="NB2-1S-2Ei"/>
+                                                <include reference="XiZ-qd-Tcs"/>
+                                                <include reference="ujE-Pw-hRo"/>
+                                                <include reference="Pyj-3G-lCO"/>
+                                                <include reference="VMu-Yo-0Nw"/>
+                                                <include reference="aeO-7V-naL"/>
+                                                <include reference="ee1-qh-EnZ"/>
+                                                <include reference="26R-nY-xOn"/>
+                                                <include reference="IVs-87-Mxp"/>
+                                                <include reference="xD9-0X-WA8"/>
+                                                <include reference="zal-y9-NPp"/>
+                                                <include reference="Hy9-ts-gcZ"/>
+                                                <include reference="hhU-Hs-CkP"/>
+                                                <include reference="xYj-dE-zIZ"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -420,6 +401,25 @@
                                     </mask>
                                 </variation>
                             </scrollView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pFN-PX-toV">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="GIR-gz-H5H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GIR-gz-H5H"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="GIR-gz-H5H"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -450,13 +450,13 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="pFN-PX-toV"/>
                                 <exclude reference="qUo-qb-edL"/>
                                 <exclude reference="KT4-jC-aPd"/>
                                 <exclude reference="jAn-UA-pqa"/>
                                 <exclude reference="iqa-eu-i9s"/>
                                 <exclude reference="Rag-gn-zp6"/>
                                 <exclude reference="7p8-EJ-wv7"/>
+                                <exclude reference="pFN-PX-toV"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="kkQ-vZ-mAU"/>
@@ -480,13 +480,13 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="pFN-PX-toV"/>
                                 <include reference="qUo-qb-edL"/>
                                 <include reference="KT4-jC-aPd"/>
                                 <include reference="jAn-UA-pqa"/>
                                 <include reference="iqa-eu-i9s"/>
                                 <include reference="Rag-gn-zp6"/>
                                 <include reference="7p8-EJ-wv7"/>
+                                <include reference="pFN-PX-toV"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="kkQ-vZ-mAU"/>
@@ -514,6 +514,8 @@
                         <outlet property="cityTextField" destination="pFN-PX-toV" id="ir2-8a-9ul"/>
                         <outlet property="desLabel" destination="TcM-uQ-GN4" id="AjS-DJ-VS1"/>
                         <outlet property="myColletionView" destination="y1C-Mi-G83" id="Yb4-K3-eBR"/>
+                        <outlet property="myContainView" destination="KgD-Dq-LAB" id="BkP-kK-7Ql"/>
+                        <outlet property="myScrollView" destination="7p8-EJ-wv7" id="oRd-XX-7WB"/>
                         <outlet property="pm25Label" destination="alX-Q4-3pW" id="Hu9-QX-gLX"/>
                         <outlet property="qualityLabel" destination="PQk-B4-Ceb" id="eDR-Vb-pl9"/>
                         <outlet property="tempLabel" destination="iqa-eu-i9s" id="rsY-og-ugM"/>
