@@ -30,10 +30,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *desLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *myScrollView;
 @property (weak, nonatomic) IBOutlet UIView *myContainView;
-
-@property (nonatomic, strong) LSFutureWeather *futureWeather;
 @property (strong, nonatomic) IBOutlet UICollectionView *myColletionView;
+
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) LSFutureWeather *futureWeather;
 
 - (IBAction)searchWeather:(id)sender;
 - (IBAction)locationClicked;
